@@ -13,7 +13,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         return;
     } else {
         setJWT(token);
-        window.location.href = "/profile.html";
+        window.location.href = "/graphql/profile.html";
         return;
     }
 })

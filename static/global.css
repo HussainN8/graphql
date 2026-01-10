@@ -1,0 +1,12 @@
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  color: rgba(229,231,235,.95);
+  background: linear-gradient(180deg, #05060f 0%, #0a0b1a 55%, #060714 100%);
+  background-attachment: fixed;
+}
+
+.container {
+  padding-bottom: 40px;
+}

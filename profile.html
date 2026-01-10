@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/global.css">
+    <link rel="stylesheet" href="./static/profile.css">
+    <title> GraphQL - Profile</title>
+</head>
+<body>
+    <div class="container">
+    <!-- ! BACKGROUND -->
+    <div class="binary-bg" aria-hidden="true"></div>
+    <!-- ! RIBBON -->
+    <header class="top-ribbon">
+        <div class="ribbon-inner">
+            <div class="ribbon-left">
+            <img class="ribbon-icon" src="/favicon.ico" alt="" />
+            <span class="ribbon-title">GraphQL Intra Statistics</span>
+            </div>
+            <button class="ribbon-logout" type="button" id="logout-btn">Logout - <span class="hero-name" id="username">????</span></button>
+        </div>
+    </header>
+
+    <!-- ! WELCOME -->
+    <section class="hero-banner" aria-label="Profile summary">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-sheen" aria-hidden="true"></div>
+
+        <div class="hero-left">
+            <h2 class="hero-title">Welcome, <span class="hero-name" id="fullname">???? ????</span> !</h2>
+            <p class="hero-subtitle">
+            Review your course progress, check your statistics, and keep moving forward with confidence.
+            </p>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+            <div class="hero-chip chip-gold">Graphs</div>
+            <div class="hero-chip chip-indigo">Progress</div>
+            <div class="hero-chip chip-cyan">Statistics</div>
+        </div>
+    </section>
+
+    <!-- ! Simple Stats -->
+    <div class="stat-wrap">
+        <div class="stat-card" role="group" aria-label="Course snapshot">
+            <div class="stat-grid">
+            <div class="stat-cell">
+                <div class="stat-value" id="level">??</div>
+                <div class="stat-label">Current level</div>
+            </div>
+
+            <div class="stat-divider" aria-hidden="true"></div>
+
+            <div class="stat-cell">
+                <div class="stat-value" id="rank">????</div>
+                <div class="stat-label">Current rank</div>
+            </div>
+            
+            <div class="stat-divider" aria-hidden="true"></div>
+            
+            <div class="stat-cell">
+                <div class="stat-value" id="audit-ratio">?.?</div>
+                <div class="stat-label">Audit ratio</div>
+            </div>
+            
+            </div>
+        </div>
+
+        <div class="stat-caption">Your Profile</div>
+    </div>
+
+    <!-- ! First Graph -->
+     <div class="stat-wrap">
+        <section class="graph-card" aria-label="Skills radar">
+            <div id="radar-graph" class="radar-card">
+                <svg
+                    id="radar-svg"
+                    class="radar-svg"
+                    width="520"
+                    height="520"
+                    viewBox="0 0 520 520"
+                    role="img"
+                    aria-label="Skills radar"
+                >
+                    <defs>
+                    <linearGradient id="radarStroke" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="rgba(234,179,8,.95)"></stop>
+                        <stop offset="1" stop-color="rgba(99,102,241,.85)"></stop>
+                    </linearGradient>
+
+                    <linearGradient id="radarFill" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="rgba(234,179,8,.18)"></stop>
+                        <stop offset="1" stop-color="rgba(99,102,241,.18)"></stop>
+                    </linearGradient>
+                    </defs>
+                    <g class="radar-grid">
+                    <circle cx="260" cy="260" r="29.60" class="radar-ring" />
+                    <circle cx="260" cy="260" r="59.20" class="radar-ring" />
+                    <circle cx="260" cy="260" r="88.80" class="radar-ring" />
+                    <circle cx="260" cy="260" r="118.40" class="radar-ring" />
+                    <circle cx="260" cy="260" r="148.00" class="radar-ring radar-ring--outer" />
+                    </g>
+                    <g id="radar-axes"></g>
+                    <polygon
+                    id="radar-shape"
+                    class="radar-shape"
+                    points=""
+                    fill="url(#radarFill)"
+                    stroke="url(#radarStroke)"
+                    ></polygon>
+
+                    <g id="radar-dots"></g>
+                    <g id="radar-labels"></g>
+
+                    <text id="radar-cap" class="radar-cap" x="260" y="96" text-anchor="middle"></text>
+                </svg>
+                </div>
+        </section>
+        <div class="stat-caption">Skills Overview</div>
+    </div>
+
+    <!-- ! Second Graph -->
+    <div class="stat-wrap">
+        <section class="xp-card" aria-label="XP over time">
+            <div class="xp-card__head">
+            <h3 class="xp-card__title">XP Over Time</h3>
+            </div>
+
+            <div id="xp-graph" class="xp-card__body"></div>
+        </section>
+
+        <div class="stat-caption">Progress Timeline</div>
+    </div>
+    </div>
+    <script src="./scripts/profile.js" type="module"></script> 
+</body>
+</html>

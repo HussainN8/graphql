@@ -13,6 +13,7 @@ validToken(token).then(res => {
 document.getElementById("logout-btn").addEventListener("click", (e) => {
     clearJWT();
     window.location.href = "/graphql/login.html";
+    // change will ya?
 });
 
 

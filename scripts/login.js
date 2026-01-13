@@ -5,7 +5,7 @@ import { validToken } from "./queries.js";
 const token = getJWT();
 validToken(token).then(res => {
     if (res) {
-        window.location.href = "/graphql/profile.html";
+        window.location.href = "/profile.html";
         return;
     }
 })
@@ -23,7 +23,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         return;
     } else {
         setJWT(token);
-        window.location.href = "/graphql/profile.html";
+        window.location.href = "/profile.html";
         return;
     }
 })

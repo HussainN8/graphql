@@ -3,14 +3,14 @@ import { getJWT, clearJWT } from "./jwt.js";
 import { getAuditsXp, getid, getModuleLevelNProject, getName, getRank, getSkillsXp, getSkillTypes, getXpOverTime, validToken } from "./queries.js";
 import { renderRadarGraph, renderXPGraph } from "./svgs.js";
 
+const token = getJWT();
 window.addEventListener("pageshow", (event) => {
-    const token = getJWT();
-    validToken(token).then(res => {
+    const tok = getJWT();
+    validToken(tok).then(res => {
         if (!res) {
             authError();
         }
     });
-
 });
 
 

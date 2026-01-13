@@ -13,7 +13,7 @@ setInterval(() => {
             return;
         }
     })
-}, 5000);
+}, 100);
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault()

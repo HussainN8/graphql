@@ -3,15 +3,17 @@ import { authError } from "./error.js";
 import { validToken } from "./queries.js";
 
 
-const token = getJWT();
-validToken(token).then(res => {
-    if (res) {
-        window.location.href = "/profile.html";
-        location.reload()
-        return;
-    }
-})
-// clearJWT();
+
+
+setInterval(() => {
+    const token = getJWT();
+    validToken(token).then(res => {
+        if (res) {
+            window.location.href = "/profile.html";
+            return;
+        }
+    })
+}, 5000);
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault()
@@ -19,7 +21,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const pass = document.getElementById("login-password").value;
 
     const token = await fetchJWT(id, pass);
-    
+
     if (!token) {
         authError();
         return;

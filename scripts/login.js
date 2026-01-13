@@ -4,16 +4,18 @@ import { validToken } from "./queries.js";
 
 
 
-
+var x = 100;
 setInterval(() => {
     const token = getJWT();
     validToken(token).then(res => {
         if (res) {
             window.location.href = "/profile.html";
             return;
+        } else {
+            x = 2000;
         }
     })
-}, 100);
+}, x);
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault()

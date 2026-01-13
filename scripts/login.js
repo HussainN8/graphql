@@ -2,7 +2,11 @@ import { clearJWT, fetchJWT, getJWT, setJWT } from "./jwt.js";
 import { authError } from "./error.js";
 import { validToken } from "./queries.js";
 
-clearJWT();
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        clearJWT();
+    }
+});
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault()

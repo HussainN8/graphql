@@ -50,8 +50,6 @@ const setSatistics = async (token) => {
         // console.log((xpUp/xpDown)*10)
         // console.log(Math.round(((xpUp/xpDown)*10))/10)
 
-
-        
         const types = await getSkillTypes(token);
         const skills = await getSkillsXp(token, types);
         renderRadarGraph(skills);

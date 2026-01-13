@@ -2,20 +2,7 @@ import { clearJWT, fetchJWT, getJWT, setJWT } from "./jwt.js";
 import { authError } from "./error.js";
 import { validToken } from "./queries.js";
 
-
-
-var x = 100;
-setInterval(() => {
-    const token = getJWT();
-    validToken(token).then(res => {
-        if (res) {
-            window.location.href = "/profile.html";
-            return;
-        } else {
-            x = 2000;
-        }
-    })
-}, x);
+clearJWT();
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault()

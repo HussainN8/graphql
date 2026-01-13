@@ -47,8 +47,8 @@ const setSatistics = async (token) => {
         const xpUp = await getAuditsXp(token, id, "up");
         const xpDown = await getAuditsXp(token, id, "down");
         ratioFeild.innerText = ( Math.round(((xpUp/xpDown)*10))/10).toFixed(1);
-        // console.log((xpUp/xpDown)*10)
-        // console.log(Math.round(((xpUp/xpDown)*10))/10)
+        console.log((xpUp/xpDown)*10)
+        console.log(Math.round(((xpUp/xpDown)*10))/10)
 
         const types = await getSkillTypes(token);
         const skills = await getSkillsXp(token, types);

@@ -27,7 +27,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         return;
     }
 })
-
+// ok
 const params = new URLSearchParams(window.location.search);
 
 console.log(params.get("error"))

@@ -1,5 +1,15 @@
-import { fetchJWT, setJWT } from "./jwt.js";
+import { fetchJWT, getJWT, setJWT } from "./jwt.js";
 import { authError } from "./error.js";
+import { validToken } from "./queries.js";
+
+const token = getJWT();
+validToken(token).then(res => {
+    if (res) {
+        window.location.href = "/graphql/profile.html";
+        return;
+    }
+})
+
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault()
